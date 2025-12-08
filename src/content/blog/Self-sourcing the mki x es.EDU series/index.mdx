@@ -1,0 +1,289 @@
+---
+title: 'Self-sourcing the mki x es.EDU series'
+description: 'Starting with Synth DIY'
+date: 2025-12-08
+tags: ['synth diy']
+authors: ['xoxo']
+---
+
+# Introduction
+
+One of the best starting points for learning the basics of analog synthesizer circuitry is the [Moritz Klein YouTube Channel](https://www.youtube.com/@MoritzKlein0), and especially the [mki x es.EDU series](https://www.ericasynths.lv/shop/diy-kits-1/mki-x-esedu-diy-system/).
+
+This series lets you build a fully featured modular monosynth, supported by comprehensive documentation on how the circuits work and educational videos by Moritz Klein. After building all the modules and going through the documentation and videos, you'll have a solid understanding of how a analog synthesizer works at a low level, built from scratch.
+
+While some basic electronics knowledge is definitely helpful, Moritz Klein explains all the important electronic concepts in a very accessible way, so even beginners can follow most of what's going on.
+
+One of the best writeups on this series that I've seen, complete with simulations and lots of extra detail, can be found [here](https://www.craigstuntz.com/posts/2023-02-20-building-a-synthesizer-0.html).
+
+**This article is intended to help you easily self-source parts for the mki x es.EDU series.**
+
+**You will be missing the PCBs and front panels that are included in the official kit,** but the modules are meant to be built and tested on breadboards first anyway. **Later on, you will need to transfer them onto perfboard or stripboard and build your own front panels**. If you want to see examples, a lot of people over at the [Moritz Klein Discord](https://discord.com/invite/KCwpyAsFpb) are posting their builds.
+
+**As an alternative, you can design your own PCBs** and have them manufactured by services like JLCPCB or PCBWay. The [Eurorack DIY: 909 Rimshot videos by MeeBilt](https://www.youtube.com/watch?v=S1-vpSbkcPo) are a really good introduction to designing eurorack modules with KiCad, including his approach to designing front panels in KiCad. In general, this series is ideal for designing your first PCBs, since the low component count of the modules means everything should fit on a single board and the routing ought to be fairly straightforward.
+
+## How much will it cost?
+
+Most of the parts for the modules can be ordered from **Mouser for about 65€-75€**. The remaining parts are available on **Aliexpress for roughly 30-40€**.
+
+You might need to place an extra order from a synth-DIY-focused shop for a few parts that are not available on Aliexpress. In my case, that was a single A1M potentiometer and two stereo 3.5 mm jacks in the exact style I wanted, although I could have gone with alternatives on Aliexpress if I had wanted to avoid this extra order.
+
+If you are just getting started with electronics and do not yet own breadboards, wires, perfboard or stripboard, and similar supplies, expect to spend an additional 20-40€, not including the tools needed for soldering.
+
+And if you are just starting out with eurorack, you will also need a eurorack power supply and case, as well as several 3.5 mm patch cables and 10-pin ribbon cables. Realistically, these items will add another 120€-150€ or more, depending on your choices. Recommendations for these will follow at the end of the article.
+
+# Sourcing Parts
+
+## The mki x es.EDU modules
+
+### BOM for all modules
+
+I created **[this BOM spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRDuBQbBHRE0QOSkk1M7gNz8vHHWeyscSzyRuaFDZxzafRiyvybA8hFq13r0btTzKkQpcI8200xIsGP/pubhtml?gid=0&single=true)** based on the parts listed in the official user manuals.
+
+The user manuals can be found here:
+
+- [VCO User Manual](https://www.ericasynths.lv/media/VCO_MANUAL_v2.pdf)
+- [VCA User Manual](https://www.ericasynths.lv/media/VCA_MANUAL_FINAL.pdf)
+- [EG User Manual](https://www.ericasynths.lv/shop/diy-kits-1/edu-diy-eg/)
+- [Sequencer User Manual](https://www.ericasynths.lv/media/SEQ_MANUAL_v3.pdf)
+- [VCF User Manual](https://www.ericasynths.lv/media/VCF_MANUAL_v2.pdf)
+- [Mixer User Manual](https://www.ericasynths.lv/media/MIXER_MANUAL.pdf)
+- [Noise/S&H User Manual](https://www.ericasynths.lv/media/SH_MANUAL_v1.pdf)
+- [Output User Manual](https://www.ericasynths.lv/media/DIY_EDU_Output_Manual.pdf)
+- [EDU DIY Wavefolder User Manual](https://www.ericasynths.lv/media/WAVEFOLDER_MANUAL.pdf)
+
+In the output module, the SB140 diode is used instead of the originally specified 1N5819, as SB140 is already employed in all other modules. For its role as a reverse polarity protection diode, it is functionally equivalent to the 1N5819.
+
+### Parts to buy from Mouser
+
+You can order all parts via this **[Mouser shopping cart.](https://www.mouser.at/Tools/SavedCart/Share?AccessID=1f0a8978b1)** Spare parts are not included, so consider adding a few extra pieces yourself.
+
+For an convenient overview of the parts, refer to the **[BOM spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRDuBQbBHRE0QOSkk1M7gNz8vHHWeyscSzyRuaFDZxzafRiyvybA8hFq13r0btTzKkQpcI8200xIsGP/pubhtml?gid=0&single=true)**.
+
+### Parts to buy from Aliexpress
+
+#### Info about Aliexpress
+
+**AliExpress listings often aren't available worldwide, can show different prices and shipping costs depending on the country, may get more expensive over time, or sometimes disappear altogether.**
+
+**Because of this, I've included screenshots of the listings themselves so you know exactly what to look for when searching.**
+
+If the prices for the linked listing seem high, try searching with the relevant keywords yourself. You might be able to find a similar item cheaper.
+
+#### Parts Overview
+
+| Part Type     | Value        | Properties / Description                  | TOTAL | Mouser            |
+| ------------- | ------------ | ----------------------------------------- | ----- | ----------------- |
+| Trim-Resistor | 100k         | 25 turn (3296W footprint)                 | 2     | 81-PV36W104C01B00 |
+| Trim-Resistor | 50k          | 25 turn (3296W footprint)                 | 1     | 81-PV36Z503C01B00 |
+| Trim-Resistor | 20k          | 25 turn (3296W footprint)                 | 1     | 81-PV36Y203C01B00 |
+| Trim-Resistor | 10k          | 25 turn (3296W footprint)                 | 1     | 81-PV36W103C01B00 |
+| Trim-Resistor | 1k           | 25 turn (3296W footprint)                 | 1     | 81-PV36X102C01B00 |
+| Trim-Resistor | 5k           | 25 turn (3296W footprint)                 | 1     | 81-PV36W502C01B00 |
+| Trim-Resistor | 2k           | 25 turn (3296W footprint)                 | 2     | 81-PV36Z202C01B00 |
+| Potentiometer | A1M          | logarithmic (A), single gang (e.g. RK097) | 4     |                   |
+| Potentiometer | A100k        | logarithmic (A), single gang (e.g. RK097) | 2     |                   |
+| Potentiometer | B1M          | linear (B), single gang (e.g. RK097)      | 1     |                   |
+| Potentiometer | B250k        | linear (B), single gang (e.g. RK097)      | 2     |                   |
+| Potentiometer | B100k        | linear (B), single gang (e.g. RK097)      | 17    |                   |
+| Potentiometer | B10k         | linear (B), single gang (e.g. RK097)      | 3     |                   |
+| Toggle Switch | SPDT         | ON-ON, 3pin (e.g. MTS-102)                | 7     | 612-100-A1421     |
+| Toggle Switch | SP3T         | ON-ON-ON, 6pin (e.g. MTS-2033)            | 1     | 612-100-L1111     |
+| Audio Jack    | 3.5mm Mono   | 3pin (e.g. WQP518MA)                      | 45    |                   |
+| Audio Jack    | 3.5mm Stereo | 3pin (e.g. PJ366ST)                       | 2     |                   |
+
+#### Trim-Resistors
+
+You can buy these from Mouser, but there are kits on Aliexpress that include all the required values. With such a kit, you save about 10€ and also have some spare parts on hand for future projects:
+![Aliexpress - Trim Resistors (3296W style) Picture](https://i.imgur.com/dxsrNkq.png)
+
+[Aliexpress - Trim Resistors (3296W style)](https://www.aliexpress.com/item/1005002323998740.html)
+
+#### Potentiometers
+
+A very popular style that is also widely available on Aliexpress is the **RK097**:
+
+- These have a metal bushing and can be mounted to the front panel with a nut.
+  The name comes from the Alps RK097 series. They are very similar in size and pinout to the Alpha 9 mm (RD901F & RV09) and, as far as is known, also to the Bourns PTV09. The vertical versions should all fit the Potentiometer_Alpha_RD901F-40-00D_Single_Vertical footprint included in KiCad.
+
+They are available with **horizontal or vertical pin orientation**. Vertical versions are commonly used on PCBs, but also work fine on perfboard/stripboard. Horizontal versions give a bit more flexibility when mounting perfboard/stripboard; the following pictures show some examples:
+
+![](https://i.imgur.com/PLFFRug.png)
+
+_(pictures from: SLOWROOM, rumpythecat, HAGIWO)_
+
+The RK097 series also comes with different shaft types (for example round, D‑type, T18 spline) and shaft lengths. The most commonly used shaft length is **15 mm** (sometimes written as 5+10), and for this project we just need **single gang** potentiometers.
+
+![Potentiometer shaft](https://i.imgur.com/VtCZOyW.png)
+
+_here the 10mm + 5mm can be seen_
+
+Not all knobs go on all shaft types. [These adapters](https://www.thonk.co.uk/shop/brass-pot-adapters-x20/) can help to a certain extend.
+
+I went with **RK097, vertical pin orientation, 15mm T18 spline shaft (aka plum shaft), single gang potentiometers**.
+
+![Aliexpress - RK097 Potentiometers Picture](https://i.imgur.com/UTtuiMM.png)
+
+_[Aliexpress - RK097 Potentiometers](https://aliexpress.com/item/1005010063122061.html)_ - this listing does not include (nuts)[]; you will need to buy them separately.
+
+They're sold by resistance value and taper (A = logarithmic, B = linear), typically in packs of 5 or 10 for 2-3€. Overall, this comes to about 15-20€.
+
+**I found all except of the A1M (logarithmic/audio, 1 MΩ) in this style**. For that one, you either need to choose a different variant (search for ‘A1M potentiometer' on Aliexpress and pick the closest match) or order a very similar type, such as the Alpha 9 mm RD901F, from one of these shops:
+
+- [taydaelectronics.com](https://www.taydaelectronics.com/potentiometer-variable-resistors/rotary-potentiometer.html) (shipped from Thailand, with competitive prices, but not recommended for European buyers because of import charges, which are often much higher than just VAT)
+- [Thonk.co.uk](https://www.thonk.co.uk/product-category/potentiometer/) (UK)
+- [N8Synth.co.uk](https://www.n8synth.co.uk/product-category/synth-diy/potentiometers/) (UK)
+- [musikding.de](https://www.musikding.de/Potentiometer-9mm_1) (Germany)
+- [banzaimusic.com](https://www.banzaimusic.com/Alpha-9mm/) (Germany)
+- [synthCube.com](https://synthcube.com/potentiometers-trimpots/) (USA)
+- [ModularAddict.com](https://modularaddict.com/parts/synth-diy-parts/potentiometer) (USA)
+
+#### Miniature Toggle Switches
+
+##### SPDT (Single Pole Double Throw)
+
+The most commonly used SPDT toggle can be found using the keyword **MTS‑102**. The Mouser parts I included in the list appear to be the same general type, but they are quite expensive, so it is recommended to buy them from Aliexpress.
+![Aliexpress - MTS-102](https://i.imgur.com/juPhXiD.png)
+
+_[Aliexpress - MTSSelf-sourcing the mki x es.EDU series.mdx-102](https://www.aliexpress.com/item/1005008304338583.html)_
+
+You can also find this switch in many of the shops mentioned in the potentiometer section.
+
+##### SP3T (Single Pole Tripple Throw)
+
+Can be found with the keyword **MTS‑2033**, but these are a bit harder to track down on Aliexpress. I only found two offers: 10 pieces for about 4€ and a single piece for about 2€, both only available as bundle deals. Make sure the listing says ‘ON‑ON‑ON' and that the switch has 6 pins in total.
+
+As you just need one of these, it is also probably okay to buy the overpriced one on Mouser, if you have a hard time finding it on Aliexpress.
+
+![Aliexpress - MTS-2033](https://i.imgur.com/7q0AXWg.png)
+
+_[Aliexpress bundle deal - MTS-2033](https://www.aliexpress.com/ssr/300000512/BundleDeals2?spm=a2g0o.productlist.main.2.4e9014a5kfBc8I&productIds=1005006912708809:12000038706593185)_
+
+#### Audio Jacks
+
+An overview of commonly used jacks can be found [here](https://pugix.com/synth/eurorack-jack-confusion/).
+
+##### 3.5mm Mono Jacks
+
+The PJ-301m-12 (aka WQP518MA, PJ301M-12 and PJ398SM), often nicknamed Thonkiconn, are the most commonly used ones and can be bought cheaply on Aliexpress. Search for **PJ‑301**.
+
+I came across the following explanation for their popularity in synth DIY:
+
+> The Thonkiconn is probably the most popular jack socket in the synth DIY community because its height above a PCB very closely matches the most popular Alpha potentiometer height making it easy to mount faceplates.
+
+![Aliexpress - PJ-301](https://i.imgur.com/SkaOoYY.png)
+
+_[Aliexpress - PJ-301M -12](https://www.aliexpress.com/item/1005005352992401.html)_
+
+##### 3.5mm Stereo Jacks
+
+**I couldn't find the stereo Thonkiconn in small quantities on Aliexpress.**
+
+![](https://i.imgur.com/XIKr9Ox.png)
+
+Shops that sell them are:
+
+- [Thonk.co.uk](https://www.thonk.co.uk/shop/thonkiconn/)
+- [taydaelectronics.com](https://www.taydaelectronics.com/mini-toggle-switch-dpdt-on-on-on-mts2033.html)
+- [synthCube.com](https://synthcube.com/3-5mm-mono-and-stereo-audio-jacks/)
+- [N8Synth.co.uk](https://www.n8synth.co.uk/shop/synth-diy/jacks-and-sockets/pj-366st-3-5mm-stereo-audio-jack/)
+- [oddvolt.com](https://oddvolt.com/products/pj366st-stereo-thonkiconn-5pcs)
+- [exploding-shed.com](https://www.exploding-shed.com/thonkiconn-stereo-wqp419gr-1-pc/100516P001)
+- probably also other that I linked to in the potentiometer section.
+
+If you want to avoid an extra order, look for a compatible part such as the **PJ392**. There are other options too, they should state 3.5mm, stereo and have three pins.
+
+![](https://i.imgur.com/fjKsb9K.png)
+
+[Aliexpress - PJ392](https://www.aliexpress.com/item/1005002017289807.html)
+
+## Additional Parts
+
+**These are rather generic parts that you can often also buy cheaply on Amazon, though Aliexpress is usually slightly cheaper**.
+
+### Breadboards
+
+Buy some cheap breadboards. I recommend getting at least 5 pieces, maybe even 10, so you can build more than one module at the same time.
+
+Get the larger ones like these; you should be able to find them for around 2-3€ per piece.
+![](https://i.imgur.com/65tJWc7.png)
+
+[Aliexpress - Breadboards](https://www.aliexpress.com/item/1005009762063029.html)
+
+There are quality differences, but the cheap ones are okay to start with in my opinion. A commonly recommended option, which costs around 9€ per piece, is the BB830 from BusBoard Prototype Systems, available on [Mouser](https://www.mouser.com/ProductDetail/BusBoard-Prototype-Systems/BB830?qs=VEfmQw3KOauhPeTwYxNCaA%3D%3D).
+
+### Solid core wire (22 or 24 AWG)
+
+For making connections on breadboard I recommend both, dupont cable and solid core wire. Solid core wire lets you make really neat connections, and dupont cable can come in handy for quick connections or also connecting parts like potentiometer and jacks to the breadboard.
+
+For **solid core wire**, I read that **22 AWG** is best with breadboards. I got 24 AWG at home and it works just fine. I would recommend to buy at least 2-3 colors.
+![](https://i.imgur.com/bBYhaCm.png)
+
+### Dupont cables
+
+**Dupont cables** usually cost around 1-2€ for a pack of 50 to 100 pieces. It is a good idea to get both **male-to-male** and **female-to-male** types.
+
+![](https://i.imgur.com/oFFkoHt.png)
+
+[Aliexpress - Dupont cables](https://www.aliexpress.com/item/4000203371860.html)
+
+### Stranded wire (24 or 26 AWG)
+
+For connecting front panel jacks, switches, and potentiometers to your perfboard or stripboard, you can use solid core wire, but **24 or 26 AWG stranded wire** is generally easier and more pleasant to work with in this scenario. Here one or two colors should be enough.
+
+![](https://i.imgur.com/BcsoLrT.png)
+
+[Aliexpress - Stranded Wire](https://www.aliexpress.com/item/1005001590476043.html)
+
+### Perfboard or Stripboard
+
+If you're not planning to design your own PCBs or use specialized prototyping systems like [this one](https://www.n8synth.co.uk/product-category/eurorack-prototype-kits/), you'll need to get perfboard or stripboard and populate it with components. Stripboard features pre-linked rows similar to breadboards, while perfboard has isolated copper pads that require wiring or soldering bridges between them. [This video](https://www.youtube.com/watch?v=0Mu2L9z1MH8) demonstrates the differences.
+
+On Aliexpress you can find both types in a suitable size (for example 9×15 cm) for about 0.5-1€ per board. It's a good idea to pick up around 15-20 pieces.
+
+![](https://i.imgur.com/kiaKmMP.png)
+
+[Aliexpress - Perfboard](https://www.aliexpress.com/item/1005009575334987.html)
+
+### DIP IC Sockets
+
+These are not strictly necessary, but they are recommended. Instead of soldering the ICs directly to the board, you solder the sockets and plug the ICs into them. This makes it much easier to replace or swap/reuse ICs later without any desoldering.
+
+![](https://i.imgur.com/MsQr4Xg.png)
+
+[Aliexpress - DIP IC Sockets](https://www.aliexpress.com/item/1005006149904839.html)
+
+## Eurorack Power Supply, Case and Patch Cables
+
+### Power Supply
+
+There are many different DIY eurorack power supplys designs online. Popular ones include:
+
+- Linear power supplies built around an AC-AC wall wart transformer
+- Designs using DC-DC converters together with a suitable laptop charger or similar power adapter
+- MeanWell power supply based designs using a single RT65B or two RS-35-12 unit (these require working with mains voltage, which is dangerous if you don't know what you're doing)
+
+The easiest solution, and the one I recommend, is to buy a ready-made PSU. The lowest‑priced option is the **Behringer CP1A** at around 50-55€.
+
+Even the cheapest DIY solutions will not save you much money, if any at all. With a ready-made PSU, you also avoid the hassle of sourcing individual parts and you don't need to work with mains voltage.
+
+### Cables to connect to the power supply
+
+You'll need ten 10‑pin ribbon cables with 2.54 mm pitch, like these:
+![](https://i.imgur.com/3DrPVYA.png)
+
+### Case
+
+The official mki x es.EDU kit includes a case that is 84 HP wide. Since you will be transferring the designs yourself onto perfboard, stripboard or PCBs and creating your own front panels, you can choose the width of your modules freely.
+
+An affordable ready-made option is the **Behringer EURORACK 104** case, which costs around 50€ and offers 104 HP of space. However, it is not very deep, so that makes designing your perfboard/stripboard designs harder.
+
+If you want to have more depth, you could go for an **Behringer Eurorack Rack** which already includes a Behringer CP1A and costs 88€, but has only 84HP. The CP1A already occupies 4HP.
+
+If neither of these options appeals to you, you can either choose a more expensive case or build one yourself. Cases can be built almost for free from scrap wood, with the modules screwed directly into the wood, [LMNC style](https://www.youtube.com/watch?v=4T6J-K8_yk4). There are plenty of Eurorack case tutorials and build ideas online, so take a look and see what you like best.
+
+### 3.5mm Patch Cables
+
+I imagined the cables would be cheaper, but you should budget at least 2-3€ per cable. The official kit includes 15 cables, but a few more wouldn't hurt.
+
+From what I've seen, Aliexpress is not much cheaper than Amazon. There are lots of options and many different preferences and recommendations online, and since I'm also just starting out with the hobby, I can't really give you firm advice here.
