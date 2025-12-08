@@ -4,7 +4,7 @@ export const SITE: Site = {
   title: 'xoxo.rip',
   description: 'A simple personal blog.',
   href: 'https://xoxo.rip',
-  author: 'hugs-and-kisses',
+  author: 'xoxo',
   locale: 'en-US',
   featuredPostCount: 2,
   postsPerPage: 3,
@@ -14,10 +14,6 @@ export const NAV_LINKS: SocialLink[] = [
   {
     href: '/blog',
     label: 'blog',
-  },
-  {
-    href: '/authors',
-    label: 'authors',
   },
   {
     href: '/about',
