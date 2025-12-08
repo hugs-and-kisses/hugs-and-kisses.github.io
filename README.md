@@ -1,5 +1,5 @@
-# www.xoxo.rip
+# xoxo.rip
 
 This repository contains the source for my personal blog.
 
-- **Live site**: https://www.xoxo.rip
+- **Live site**: https://xoxo.rip
